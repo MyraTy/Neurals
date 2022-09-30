@@ -20,8 +20,6 @@ a = ""
 b = ""
 trainingI = np.array(Input, "float32")
 trainingO = np.array(Output, "float32")
-m.add(k.layers.Dense(1, input_dim=1, activation="relu"))
-m.add(k.layers.Dense(10, input_dim=2, activation="sigmoid"))
 m.add(k.layers.Dense(1, input_dim=1, activation="softmax"))
 m.compile(loss='mean_squared_error',
               optimizer='adam',
