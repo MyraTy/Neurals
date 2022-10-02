@@ -1,36 +1,24 @@
-from tensorflow import keras as k
+import tensorflow as tf
+from tensorflow import keras
 import numpy as np
-import synteticer
-print("Creando red neuronal...")
-m = k.models.Sequential()
-print("Hello, this is a neural newtork.", "First, you have to enter the training data, that are the training inputs and outputs respectivly. When you enter it, you must do it like a Python list, please.", "Let's begin!", sep="\n")
-rInput = input()
-rOutput = input()
-Input = rInput.split(", ")
-Output = rOutput.split(", ")
-count = 0
-for s1 in Input:
-    Input[count] = int(s1)
-    count += 1
-count = 0
-for s2 in Output:
-    Output[count] = int(s2)
-    count += 1
-a = ""
-b = ""
-trainingI = np.array(Input, "float32")
-trainingO = np.array(Output, "float32")
-m.add(k.layers.Dense(1, input_dim=1, activation="softmax"))
-m.compile(loss='mean_squared_error',
-              optimizer='adam',
-              metrics=['binary_accuracy'])
+import neurals_assets as na
+
+print("Initialising...")
+trainingI = na.cdata([
+    [[[[[1.0]]]], [[[[2.0]]]]],
+    [[[[[3.0]]]], [[[[4.0]]]]]], type=float)
+trainingO = na.cdata([
+    [[[[[1.0,]]]], [[[[11.0]]]]],
+    [[[[[21.0]]]], [[[[1211.0]]]]]], type=float)
+tf.random.set_seed(42)
+
+print("Creating Neurals...")
+seq = keras.Sequential([keras.layers.Dense(units=6, input_shape=[2, 1, 1, 1, 1], activation="relu")])
+print("Compiling...")
+seq.compile(optimizer=keras.optimizers.Adam(1), loss='mean_squared_error')
+
 print("Training...")
-print("Epochs?")
-e = int(input())
-m.fit(trainingI, trainingO, epochs=e)
-print("Ready!")
-scores = m.evaluate(trainingI, trainingO)
-print("%s: %.2f%%" % (m.metrics_names[1], scores[1]*100))
-print("Type a value for make yor neural neutork predict that!")
-print(m.predict(synteticer.synt(int(input()))))
-print("And that's all!!!")
+seq.fit(trainingI, trainingO, epochs=7000)
+print("Done!")
+print("Enter 2 value to make Neurals predict it!")
+print(na.predict(seq, [[[[[[float(input())]]]]], [[[[[float(input())]]]]]]))
