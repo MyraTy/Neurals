@@ -1,3 +1,5 @@
 import numpy as np
-def synt(data):
-    return np.array([data], "float32")
+def cdata(data, type=float):
+    return np.array(data, dtype=type)
+def predict(model, data):
+    return model.predict([data])
