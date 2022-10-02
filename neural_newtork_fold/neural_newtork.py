@@ -1,13 +1,13 @@
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
-import neurals_assets as na
+import synteticer as sc
 
 print("Initialising...")
-trainingI = na.cdata([
+trainingI = sc.cdata([
     [[[[[1.0]]]], [[[[2.0]]]]],
     [[[[[3.0]]]], [[[[4.0]]]]]], type=float)
-trainingO = na.cdata([
+trainingO = sc.cdata([
     [[[[[1.0,]]]], [[[[11.0]]]]],
     [[[[[21.0]]]], [[[[1211.0]]]]]], type=float)
 tf.random.set_seed(42)
@@ -21,4 +21,4 @@ print("Training...")
 seq.fit(trainingI, trainingO, epochs=7000)
 print("Done!")
 print("Enter 2 value to make Neurals predict it!")
-print(na.predict(seq, [[[[[[float(input())]]]]], [[[[[float(input())]]]]]]))
+print(sc.predict(seq, [[[[[[float(input())]]]]], [[[[[float(input())]]]]]]))
