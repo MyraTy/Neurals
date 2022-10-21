@@ -3,13 +3,28 @@ from tensorflow import keras
 import numpy as np
 import tensorflow_shortcuts as ts
 
+def codify(text):
+    data = list(text)
+    res = []
+    count = 0
+    for i in range(len(text)):
+        res.append(ord(data[i]))
+    return res
+
+def decodify(list, count):
+    data = []
+    res = ""
+    for i in range(count):
+        res += chr(list[i])
+    return res
+
 print("Initialising...")
 trainingI = ts.cdata([
-    [[[[[1.0]]]], [[[[2.0]]]]],
-    [[[[[3.0]]]], [[[[4.0]]]]]], type=float)
+    [[[[[codify("Hello world!")]]]], [[[[codify("I'm a terminator")]]]]],
+    [[[[[codify("I'm not your father")]]]], [[[[codify("My home")]]]]]], type=float)
 trainingO = ts.cdata([
-    [[[[[1.0]]]], [[[[4.0]]]]],
-    [[[[[9.0]]]], [[[[61.0]]]]]], type=float)
+    [[[[[codify("No film")]]]], [[[[codify("film")]]]]],
+    [[[[[codify("film")]]]], [[[[codify("film")]]]]]], type=float)
 tf.random.set_seed(42)
 
 print("Creating Neurals...")
@@ -22,8 +37,9 @@ seq.fit(trainingI, trainingO, epochs=1000, verbose=False)
 print("Done!")
 print("Enter a float value to make Neurals predict it!")
 try:
-    res = ts.predict(seq, [float(input())], Type=float)
-    print(res)
+    res = ts.predict(seq, [codify(input())], Type=float)
+    count = len(str(res))
+    print(decodify(res, count))
 except ValueError:
     raise ValueError("That's not a float value. If you typed well, please ask MyraTy about this.")
 except Exception:
