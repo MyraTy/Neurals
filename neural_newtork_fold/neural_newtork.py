@@ -1,25 +1,28 @@
+import random
+import json
+import pickle
+import numpy as np
+
 import tensorflow as tf
 from tensorflow import keras
-import numpy as np
 import tensorflow_shortcuts as ts
 
-def codify(text):
-    data = list(text)
-    res = []
-    count = 0
-    for i in range(len(text)):
-        res.append(ord(data[i]))
-    return res
+import nltk
+from nltk.stem import WorldNetLemmatizer
 
-def decodify(list, count):
-    data = []
-    res = ""
-    for i in range(count):
-        res += chr(list[i])
-    return res
+lemmatizer = WordNetLemmatizer()
+intents = json.loads(open("intents.json").read())
+
+words = []
+classes = []
+documents = []
+ignore = [".", ",", "!", "?"]
 
 print("Initialising...")
-trainingI = ts.cdata([
+
+for intent in intents["Intents"]
+
+"""trainingI = ts.cdata([
     [[[[[codify("Hello world!")]]]], [[[[codify("I'm a terminator")]]]]],
     [[[[[codify("I'm not your father")]]]], [[[[codify("My home")]]]]]], type=float)
 trainingO = ts.cdata([
@@ -45,4 +48,4 @@ except ValueError:
 except Exception:
     raise Exception("An error on source code ocured. Please ask MyraTy about this.")
 finally:
-    print("Program finished.")
+    print("Program finished.")"""
