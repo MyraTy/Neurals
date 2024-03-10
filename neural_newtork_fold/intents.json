@@ -9,7 +9,7 @@
   },
   {"tag": "turing",
    "patterns": ["Are you male or female?", "Age?", "Whose are your parents", "What are you feeling now", "Whose's your mother?", "What's your favorite food?", "Do you like pizza?"],
-   "responses": [Sorry, I cannot answer this questions.", "Remember: I'm an AI, not a human"]
+   "responses": ["Sorry, I cannot answer this questions.", "Remember: I'm an AI, not a human"]
   },
   {"tag": "joke",
    "patterns": [ "Can you tell me a joke?", "Joke?", "A funny joke?"],
