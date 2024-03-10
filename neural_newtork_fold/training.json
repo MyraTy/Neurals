@@ -28,8 +28,8 @@
   },
   "Outputs": {
     "Hello.": "Greetings",
-    "Hello!": "Greeting",
-    "What do you need?": "Greetings,
+    "Hello!": "Greetings",
+    "What do you need?": "Greetings",
     "I'm Neurals, an AI Chatbot.": "Identity",  
     "I'm a basic chatbot, you cannot expect I'm going to pass the Turing test.": "Turing",
     "Sorry, but I'm not prepared for passing your Turing test.": "Turing",
