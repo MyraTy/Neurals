@@ -1,0 +1,41 @@
+{
+  "Inputs": {
+    "Hi": "Greetings",
+    "Hey!": "Greetings",
+    "Hello": "Greetings",
+    "What do you do?":  "Greetings",
+    "What's up?": "Greetings",
+    "Who are you?": "Identity",
+    "Name?": "Identity",
+    "What's your name?": "Identity",
+    "Age?": "Turing",
+    "Are you male or female?": "Turing",
+    "Whose are your parents": "Turing",
+    "What are you feeling now": "Turing",
+    "Whose's your mother": "Turing", 
+    "What's your favorite food?": "Turing",
+    "Do you like pizza": "Turing"
+    "Can you tell me a joke?": "Joke",
+    "Joke?": "Joke",
+    "A funny joke?": "Joke",
+    "Bye": "Farewell",
+    "Bye Bye!": "Farewell",
+    "Sayonara": "Farewell",
+    "I'm leaving": "Farewell",
+    "It's time!": "Farewell",
+    "Sorry, I need to go": "Farewell",
+    "See you soon!": "Farewell"
+  },
+  "Outputs": {
+    "Hello.": "Greetings",
+    "Hello!": "Greeting",
+    "What do you need?": "Greetings,
+    "I'm Neurals, an AI Chatbot.": "Identity",  
+    "I'm a basic chatbot, you cannot expect I'm going to pass the Turing test.": "Turing",
+    "Sorry, but I'm not prepared for passing your Turing test.": "Turing",
+    "Remember: I'm an AI, not a human": "Turing",
+    "Three short men enter a bar, and then, a tall man enters a bar and asks: 'Whose have broken the football?'": "Joke",
+    "See you soon!": "Farewell"
+    "Bye!": "Farewell"
+  }
+}
