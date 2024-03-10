@@ -1,0 +1,22 @@
+{"intents": [
+  {"tag": "greetings",
+   "patterns": ["hi", "Hey!", "Hello", "What do you do?", "What's up?"],
+   "responses": ["Hello!", "What do you need?"]
+  },
+  {"tag": "identity",
+   "patterns": ["Who are you?", "Name?", "What's your name?"],
+   "responses": ["I'm Neurals, an AI Chatbot"]
+  },
+  {"tag": "turing",
+   "patterns": ["Are you male or female?", "Age?", "Whose are your parents", "What are you feeling now", "Whose's your mother?", "What's your favorite food?", "Do you like pizza?"],
+   "responses": [Sorry, I cannot answer this questions.", "Remember: I'm an AI, not a human"]
+  },
+  {"tag": "joke",
+   "patterns": [ "Can you tell me a joke?", "Joke?", "A funny joke?"],
+   "responses": ["Three short men enter a bar, and then, a tall man enters a bar and asks: 'Whose have broken the football?'"]
+  },
+  {"tag": "farewell",
+   "patterns": ["Bye", "Bye Bye!", "Sayonara", "I'm leaving", "It's time!", "Sorry, I need to go", "See you soon!"],
+   "responses": ["See you soon!", "Bye!"]
+  }
+]}
