@@ -1,3 +1,1 @@
-Neurals is a sixth-dimensional neural newtork.
-It can predict values media entering some data.
-Try it out!!!
+Neurals is a WIP Chatbot. It can respond to basic prompts, don't expect it to answer a Turing test.
